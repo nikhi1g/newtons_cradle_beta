@@ -1,0 +1,98 @@
+<MainScreen>:
+
+    bar_button: bar_button
+    left_ball: left_ball
+    middle_left_ball: middle_left_ball
+    middle_ball: middle_ball
+    middle_right_ball: middle_right_ball
+    right_ball: right_ball
+
+    left_ball_string: left_ball_string
+    middle_left_ball_string: middle_left_ball_string
+    middle_ball_string: middle_ball_string
+    middle_right_ball_string: middle_right_ball_string
+    right_ball_string: right_ball_string
+
+
+
+    FloatLayout:
+        size_hint: None, None
+
+    ImageButton:
+        id: left_ball_string
+        pos: (root.width * (0.64625 - 0.375), root.width * 0.2)
+        size: (9, 500)
+        text: " "
+        source: "string.png"
+    ImageButton:
+        id: middle_left_ball_string
+        pos: (root.width * (0.64625 - 0.375 + 0.115), root.width * 0.2)
+        size: (9, 500)
+        text: " "
+        source: "string.png"
+    ImageButton:
+        id: middle_ball_string
+        pos: (root.width * (0.64625 - 0.375 + 0.115 + 0.115), root.width * 0.2)
+        size: (9, 500)
+        text: " "
+        source: "string.png"
+    ImageButton:
+        id: middle_right_ball_string
+        pos: (root.width * (0.64625 - 0.375 + 0.115 + 0.115+ 0.115), root.width * 0.2)
+        size: (9, 500)
+        text: " "
+        source: "string.png"
+    ImageButton:
+        id: right_ball_string
+        pos: (root.width * (0.64625 - 0.375 + 0.115 + 0.115+ 0.115 + 0.115), root.width * 0.2)
+        size: (9, 500)
+        text: " "
+        source: "string.png"
+
+#adding scale factoring
+
+    ImageButton:
+        text: " "
+        id: left_ball
+        source: "ball.png"
+        center_x: root.width * ((0.07125)+0.2)
+        center_y: root.width * 0.2
+    ImageButton:
+        id: middle_left_ball
+        text: " "
+        source: "ball.png"
+        center_x: root.width * ((0.07125+ 0.115)+0.2)
+        center_y: root.width * 0.2
+    ImageButton:
+        id: middle_ball
+        text: " "
+        source: "ball.png"
+        center_x: root.width * ((0.07125 + 0.115+ 0.115)+0.2)
+        center_y: root.width * 0.2
+    ImageButton:
+        id: middle_right_ball
+        text: " "
+        source: "ball.png"
+        center_x: root.width * ((0.07125+ 0.115+ 0.115+ 0.115)+0.2)
+        center_y: root.width * 0.2
+    ImageButton:
+        id: right_ball
+        text: " "
+        source: "ball.png"
+        center_x: root.width * ((0.07125+ 0.115+ 0.115+ 0.115+ 0.115)+0.2)
+        center_y: root.width * 0.2
+
+
+
+    DPEAButton:
+        id: bar_button
+        text: 'Start'
+        size: 800, 88
+        center_x: root.width * .5
+        center_y: root.height * 0.9
+        color: 1, 1, 0, 1
+        border: 50,50,50,50
+        shadow: None
+        on_press: root.func()
+
+       # root.initialize_ui()
