@@ -69,18 +69,21 @@
         source: "ball.png"
         center_x: root.width * ((0.07125 + 0.115+ 0.115)+0.2)
         center_y: root.width * 0.2
+        on_press: root.get_click()
     ImageButton:
         id: middle_right_ball
         text: " "
         source: "ball.png"
         center_x: root.width * ((0.07125+ 0.115+ 0.115+ 0.115)+0.2)
         center_y: root.width * 0.2
+        on_press: root.get_click()
     ImageButton:
         id: right_ball
         text: " "
         source: "ball.png"
         center_x: root.width * ((0.07125+ 0.115+ 0.115+ 0.115+ 0.115)+0.2)
         center_y: root.width * 0.2
+        on_press: root.get_click()
 
 
 
@@ -93,6 +96,7 @@
         color: 1, 1, 0, 1
         border: 50,50,50,50
         shadow: None
-        on_press: root.func()
+        on_press: root.on_down()
+        on_release: root.on_up()
 
        # root.initialize_ui()
