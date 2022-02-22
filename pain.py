@@ -82,8 +82,12 @@ class MainScreen(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
 
-    def bar_pressed(self):
+    def reset_cradle(self):
         home_all()
+        sleep(0.5)
+
+    def bar_pressed(self):
+        print("passed")
 
     def on_down(self):
         self.init_x = mouse_pos[0]
@@ -97,6 +101,12 @@ class MainScreen(Screen):
 
     def func(self): #testfunc
         print("testing click")
+        print(self.middle_right_ball_string.text)
+
+    def is_pressed(self, button):
+        button_id = button.text
+        print(button_id)
+
 
     def get_click(self):
         # acces the mouse event on click
@@ -108,13 +118,7 @@ class MainScreen(Screen):
         pass
 
 
-    def on_touch_down(self, touch):
-        initial_touch = touch.pos
-        print(initial_touch, 'initial')
 
-    def on_touch_up(self, touch):
-        final_touch = touch.pos
-        print(final_touch, 'final')
 
 
 

@@ -133,20 +133,17 @@ def stop_balls():
 
 
 
-def scoop():
-    left = 1
-    right = 1
-    can_scoop = True
-    if can_scoop:
-        # Left
-        complete_relative_move(left_horizontal, positions[left - 1])
-        complete_relative_move(left_vertical, left_vertical_up)
-        complete_relative_move(left_horizontal, -positions[left - 1])
-        # Right
-        complete_relative_move(right_horizontal, positions[right - 1])
-        complete_relative_move(right_vertical, right_vertical_up)
-        complete_relative_move(right_horizontal, -positions[right - 1])
-        home_verticals()
+def scoop(left =  None, right = None):
+
+        if 0 < left < 5:
+            complete_relative_move(left_horizontal, positions[left - 1])
+            complete_relative_move(left_vertical, left_vertical_up)
+            complete_relative_move(left_horizontal, -positions[left - 1])
+        if 0 < right < 5:
+            complete_relative_move(right_horizontal, positions[right - 1])
+            complete_relative_move(right_vertical, right_vertical_up)
+            complete_relative_move(right_horizontal, -positions[right - 1])
+
 
 
 def start():

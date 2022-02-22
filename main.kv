@@ -1,5 +1,7 @@
 <MainScreen>:
 
+    on_enter: root.reset_cradle()
+
     bar_button: bar_button
     left_ball: left_ball
     middle_left_ball: middle_left_ball
@@ -49,41 +51,46 @@
         text: " "
         source: "string.png"
 
-#adding scale factoring
+#added scale factoring, unique presses
 
     ImageButton:
-        text: " "
+        text: "left_ball"
         id: left_ball
         source: "ball.png"
         center_x: root.width * ((0.07125)+0.2)
         center_y: root.width * 0.2
+        on_press: root.is_pressed(left_ball)
+
     ImageButton:
         id: middle_left_ball
-        text: " "
+        text: "middle_left_ball"
         source: "ball.png"
         center_x: root.width * ((0.07125+ 0.115)+0.2)
         center_y: root.width * 0.2
+        on_press: root.is_pressed(middle_left_ball)
+
     ImageButton:
         id: middle_ball
-        text: " "
+        text: "middle_ball"
         source: "ball.png"
         center_x: root.width * ((0.07125 + 0.115+ 0.115)+0.2)
         center_y: root.width * 0.2
-        on_press: root.get_click()
+        on_press: root.is_pressed(middle_ball)
+
     ImageButton:
         id: middle_right_ball
-        text: " "
+        text: "middle_right_ball"
         source: "ball.png"
         center_x: root.width * ((0.07125+ 0.115+ 0.115+ 0.115)+0.2)
         center_y: root.width * 0.2
-        on_press: root.get_click()
+        on_press: root.is_pressed(middle_right_ball)
     ImageButton:
         id: right_ball
-        text: " "
+        text: "right_ball"
         source: "ball.png"
         center_x: root.width * ((0.07125+ 0.115+ 0.115+ 0.115+ 0.115)+0.2)
         center_y: root.width * 0.2
-        on_press: root.get_click()
+        on_press: root.is_pressed(right_ball)
 
 
 
@@ -96,7 +103,6 @@
         color: 1, 1, 0, 1
         border: 50,50,50,50
         shadow: None
-        on_press: root.on_down()
-        on_release: root.on_up()
+        on_press: root.bar_pressed()
 
        # root.initialize_ui()
